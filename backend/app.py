@@ -30,6 +30,10 @@ app.add_middleware(
 # Include Krishna API router and surface import errors in logs
 try:
     from .krishna_api import router as krishna_router
+except ImportError:
+    from krishna_api import router as krishna_router
+
+try:
     app.include_router(krishna_router)
 except Exception as e:
     log.exception("Failed to include krishna_api router: %s", e)

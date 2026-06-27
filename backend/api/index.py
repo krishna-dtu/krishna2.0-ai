@@ -2,13 +2,16 @@
 Vercel Serverless Function Entry Point
 This wraps the FastAPI app for Vercel deployment
 """
-import sys
 import os
+import sys
 
-# Add parent directory to path for imports
+# Make the backend root importable for the serverless runtime.
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from backend.app import app
+try:
+    from backend.app import app
+except ImportError:
+    from app import app
 
 # Vercel serverless handler
 handler = app
