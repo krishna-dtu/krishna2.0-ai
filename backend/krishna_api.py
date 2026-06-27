@@ -41,7 +41,7 @@ async def test_api():
         'api_key_present': True,
         'api_key_prefix': api_key[:10] + '...' if len(api_key) > 10 else 'too short',
         'system_prompt_loaded': len(SYSTEM_PROMPT) > 0,
-        'endpoint': 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
+        'endpoint': 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent'
     }
 
 @router.post('/krishna2/chat')
@@ -98,8 +98,8 @@ async def krishna_chat(body: ChatRequest):
                     "parts": parts
                 })
 
-        # Gemini API endpoint - using gemini-2.5-flash (supports vision & documents)
-        gemini_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+        # Gemini API endpoint - using gemini-flash-latest
+        gemini_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
 
         # Prepare Gemini API payload
         payload = {
