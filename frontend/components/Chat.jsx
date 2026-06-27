@@ -109,7 +109,8 @@ export default function Chat() {
         attachments: fileContents
       })
 
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'}/krishna2/chat`, {
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'production' ? '/_/backend' : 'http://127.0.0.1:8000')
+      const resp = await fetch(`${apiBaseUrl}/krishna2/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

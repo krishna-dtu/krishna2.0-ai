@@ -99,7 +99,7 @@ async def krishna_chat(body: ChatRequest):
                 })
 
         # Gemini API endpoint - using gemini-2.5-flash (supports vision & documents)
-        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        gemini_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
         # Prepare Gemini API payload
         payload = {
@@ -120,6 +120,7 @@ async def krishna_chat(body: ChatRequest):
 
         headers = {
             'Content-Type': 'application/json',
+            'Authorization': f'Bearer {api_key}',
         }
 
         async with httpx.AsyncClient(timeout=120.0) as client:
