@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 log = logging.getLogger("backend")
 
 app = FastAPI()
+application = app
+handler = app
 
 # Configure CORS safely. In development allow localhost origins; in production
 # require explicit FRONTEND_ORIGINS env var.

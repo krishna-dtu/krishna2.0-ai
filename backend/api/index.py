@@ -14,4 +14,6 @@ except ImportError:
     from app import app
 
 # Vercel serverless handler
+app = app
+application = app
 handler = app
