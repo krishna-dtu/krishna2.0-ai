@@ -123,7 +123,7 @@ async def krishna_chat(body: ChatRequest):
         }
 
         params = None
-        if api_key.startswith('AIza'):
+        if api_key.startswith(('AIza', 'AQ.')):
             params = {'key': api_key}
         else:
             headers['Authorization'] = f'Bearer {api_key}'
