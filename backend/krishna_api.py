@@ -120,11 +120,16 @@ async def krishna_chat(body: ChatRequest):
 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': f'Bearer {api_key}',
         }
 
+        params = None
+        if api_key.startswith('AIza'):
+            params = {'key': api_key}
+        else:
+            headers['Authorization'] = f'Bearer {api_key}'
+
         async with httpx.AsyncClient(timeout=120.0) as client:
-            resp = await client.post(gemini_url, json=payload, headers=headers)
+            resp = await client.post(gemini_url, json=payload, headers=headers, params=params)
 
         if resp.status_code >= 400:
             error_detail = resp.text

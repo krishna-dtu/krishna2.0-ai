@@ -146,10 +146,14 @@ export default function Chat() {
       }])
     } catch (error) {
       console.error('Chat error:', error)
+      const detail = error.message.includes('401') || error.message.includes('403')
+        ? 'Check your GEMINI_API_KEY and backend environment settings.'
+        : 'Please make sure the backend is running and the API key is set.'
+
       setMessages((prev) => [...prev, { 
         id: Date.now() + 1, 
         role: 'assistant', 
-        content: `Error: ${error.message}. Please make sure the backend is running on port 8000.`,
+        content: `Error: ${error.message}. ${detail}`,
         timestamp: new Date(),
         isError: true
       }])
