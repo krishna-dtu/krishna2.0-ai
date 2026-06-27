@@ -1,0 +1,5 @@
+# Vercel-optimized requirements
+fastapi==0.95.2
+httpx==0.24.1
+python-dotenv==1.0.0
+mangum==0.17.0
