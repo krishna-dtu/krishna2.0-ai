@@ -264,7 +264,7 @@ function Header({ loading }) {
             Krishna-2.0
           </h1>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Nitigya's Study Partner
+            Always Nitigya's ❤️
           </p>
         </div>
         
