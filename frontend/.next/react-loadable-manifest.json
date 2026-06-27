@@ -1,8 +1,9 @@
 {
   "index.js -> ../components/Chat": {
-    "id": "index.js -> ../components/Chat",
+    "id": 2048,
     "files": [
-      "static/chunks/components_Chat_jsx.js"
+      "static/chunks/148.0c5f6908abe7aec0.js",
+      "static/chunks/48.57115ee58750af2f.js"
     ]
   }
 }

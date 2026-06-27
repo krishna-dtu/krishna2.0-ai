@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"index.js -> ../components/Chat\":{\"id\":\"index.js -> ../components/Chat\",\"files\":[\"static/chunks/components_Chat_jsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"index.js -> ../components/Chat":{"id":2048,"files":["static/chunks/148.0c5f6908abe7aec0.js","static/chunks/48.57115ee58750af2f.js"]}}';
